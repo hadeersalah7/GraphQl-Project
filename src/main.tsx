@@ -3,10 +3,12 @@ import './index.css';
 import App from './App.tsx';
 import { StrictMode } from 'react';
 import { Toaster } from './components/ui/toaster.tsx';
+import { ApolloProvider } from '@apollo/client';
+import client from './apolloClient.ts';
 
 createRoot(document.getElementById('root')!).render(
-    <StrictMode>
+    <ApolloProvider client={client}>
         <App />
         <Toaster />
-    </StrictMode>
+    </ApolloProvider>
     );
