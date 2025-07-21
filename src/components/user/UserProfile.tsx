@@ -41,11 +41,11 @@ const UserProfile = ({ userName }: UserProfileProps) => {
                 gists={gists.totalCount}
             />
             {repositories.totalCount > 0 && (
-                <>
+                <div className="grid md:grid-cols-2 gap-4">
                     <PopularRepos repositories={repositories.nodes} />
                     <ForkedRepos repositories={repositories.nodes} />
                     <UsedLanguages reposiotories={repositories.nodes} />
-                </>
+                </div>
             )}
         </>
     );
