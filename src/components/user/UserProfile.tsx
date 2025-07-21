@@ -6,6 +6,7 @@ import StatsContainer from "./StatsContainer";
 import PopularRepos from "../charts/PopularRepos";
 import ForkedRepos from "../charts/ForkedRepos";
 import UsedLanguages from "../charts/UsedLanguages";
+import Loading from "./Loading";
 
 type UserProfileProps = {
     userName: string;
@@ -15,7 +16,7 @@ const UserProfile = ({ userName }: UserProfileProps) => {
         variables: { login: userName },
     });
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <Loading />;
 
     if (error) return <h2 className="text-xl">{error.message}</h2>;
 
